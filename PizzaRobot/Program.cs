@@ -22,6 +22,8 @@ namespace PizzaRobot
             {
                 Console.Error.WriteLine(ex.Message);
             }
+            Console.WriteLine("Press any button to continue");
+            Console.ReadKey();
         }
     }
 }
