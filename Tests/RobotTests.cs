@@ -29,9 +29,13 @@ namespace Tests
         [Fact]
         public void TestThirdString()
         {
-            Robot<Point, PointFactory> robot = new Robot<Point, PointFactory>("4x3 (0, 0) (3, 1) (0, 0) (1, 0) (0, 0) (0, 0)");
+            Robot<Point, PointFactory> robot = new Robot<Point, PointFactory>("4x3 (0, 0) (3, 1) (0, 0) (1, 0) (0, 0) (0, 1)");
 
-            Assert.Equal("DEEENDWWWSDEDWDD", robot.FindPath());
+            string path = robot.FindPath();
+            Assert.True(path == "DEEENDWWWSDEDWDND" ||
+                        path == "DNEEEDWWWSDEDWDND" ||
+                        path == "DEEENDSWWWDEDWDND" ||
+                        path == "DNEEEDSWWWDEDWDND");
         }
 
         [Fact]
